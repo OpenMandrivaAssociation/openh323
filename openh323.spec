@@ -3,7 +3,7 @@
 
 Name:           openh323
 Version:        1.18.0
-Release:        %mkrel 1
+Release:        %mkrel 2
 Epoch:          1
 Summary:        OpenH323 Library
 License:        MPL
@@ -149,5 +149,3 @@ export CXXFLAGS="$OPT_FLAGS -I../include"
 %dir %{_libdir}/pwlib/codecs
 %dir %{_libdir}/pwlib/codecs/audio
 %attr(0755,root,root) %{_libdir}/pwlib/codecs/audio/*.so
-
-
