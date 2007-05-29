@@ -16,7 +16,7 @@ Patch2:         openh323-1.15.1-pic.diff
 Patch3:         openh323-1.15.1-pwlib.diff
 BuildRequires:  autoconf2.5
 BuildRequires:  gawk
-BuildRequires:  openssl-static-devel
+BuildRequires:  openssl-devel
 BuildRequires:  openldap-devel
 BuildRequires:  pwlib-devel >= 1.8.4
 BuildRequires:  libspeex-devel
