@@ -3,7 +3,7 @@
 
 Name:           openh323
 Version:        1.18.0
-Release:        %mkrel 2
+Release:        %mkrel 3
 Epoch:          1
 Summary:        OpenH323 Library
 License:        MPL
@@ -14,6 +14,8 @@ Patch0:         openh323-1.19.0.1-mak_files.patch
 Patch1:         openh323-1.15.0-libname.diff
 Patch2:         openh323-1.15.1-pic.diff
 Patch3:         openh323-1.15.1-pwlib.diff
+# (fc) 1.18.0-3mdv fix build
+Patch4:		openh323-1.18.0-fixbuild.patch
 BuildRequires:  autoconf2.5
 BuildRequires:  gawk
 BuildRequires:  openssl-devel
@@ -99,6 +101,7 @@ This package contains all codec plugins for OpenH323
 %patch1 -p0 -b .libname
 %patch2 -p0 -b .pic
 %patch3 -p0 -b .pwlib
+%patch4 -p1 -b .fixbuild
 
 %build
 #don't set this otherwise it will be automatically used by pwlib/openh323 build
