@@ -3,7 +3,7 @@
 
 Name:           openh323
 Version:        1.18.0
-Release:        %mkrel 3
+Release:        %mkrel 4
 Epoch:          1
 Summary:        OpenH323 Library
 License:        MPL
