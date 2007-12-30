@@ -1,9 +1,10 @@
-%define major   1
-%define libname %mklibname %{name}_ %{major}
+%define major		1
+%define libname		%mklibname %{name}_ %{major}
+%define develname	%mklibname %{name} -d
 
 Name:           openh323
 Version:        1.18.0
-Release:        %mkrel 5
+Release:        %mkrel 6
 Epoch:          1
 Summary:        OpenH323 Library
 License:        MPL
@@ -16,7 +17,7 @@ Patch2:         openh323-1.15.1-pic.diff
 Patch3:         openh323-1.15.1-pwlib.diff
 # (fc) 1.18.0-3mdv fix build
 Patch4:		openh323-1.18.0-fixbuild.patch
-BuildRequires:  autoconf2.5
+BuildRequires:  autoconf
 BuildRequires:  gawk
 BuildRequires:  openssl-devel
 BuildRequires:  openldap-devel
@@ -31,7 +32,7 @@ BuildConflicts: libilbc-devel
 BuildConflicts: vpb-devel
 
 %description
-This is a Open Source class library for the development of
+This is an open source class library for the development of
 applications that wish to use the H.323 protocol for multi-media
 communications over packet based networks.
 
@@ -48,17 +49,17 @@ Open Source implementation of the ITU H.323 teleconferencing protocol
 that can be used by personal developers and commercial users without
 charge.
 
-%package -n %{libname}-devel
+%package -n %{develname}
 Summary:        OpenH323 development files
 Group:          Development/C
 Requires:       %{libname} = %{epoch}:%{version}-%{release} 
 Provides:       %{name}-devel = %{version}-%{release}
 Provides:       lib%{name}-devel = %{version}-%{release}
-Provides:       %{_lib}%{name}-devel = %{version}-%{release}
 Obsoletes:      %{name}_%{major}-devel
 Provides:       %{name}_%{major}-devel = %{version}-%{release}
+Obsoletes:	%{mklibname openh323_ 1 -d}
 
-%description -n %{libname}-devel
+%description -n %{develname}
 Header files and libraries for developing applications that use
 OpenH323.
 
@@ -140,7 +141,7 @@ export CXXFLAGS="$OPT_FLAGS -I../include"
 %doc *.txt mpl-1.0.htm
 %attr(0755,root,root) %{_libdir}/lib*.so.*
 
-%files -n %{libname}-devel
+%files -n %{develname}
 %defattr(-,root,root)
 %attr(0755,root,root) %{_libdir}/*.so
 %{_includedir}/*
