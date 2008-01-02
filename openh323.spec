@@ -30,6 +30,7 @@ BuildRequires:  X11-devel
 BuildConflicts: gsm-devel
 BuildConflicts: libilbc-devel
 BuildConflicts: vpb-devel
+BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
 This is an open source class library for the development of
