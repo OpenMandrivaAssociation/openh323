@@ -130,9 +130,13 @@ export CXXFLAGS="$OPT_FLAGS -I../include"
 %{_bindir}/find %{buildroot} -type f -perm 0555 -exec chmod 755 {} \;
 %{_bindir}/find %{buildroot} -type f -perm 0444 -exec chmod 644 {} \;
 
+%if %mdkversion < 200900
 %post -p /sbin/ldconfig -n %{libname}
+%endif
 
+%if %mdkversion < 200900
 %postun -p /sbin/ldconfig -n %{libname}
+%endif
 
 %clean
 %{__rm} -rf %{buildroot}
