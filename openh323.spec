@@ -12,7 +12,7 @@ Group:          System/Libraries
 URL:            http://www.openh323.org/
 Source0:        %{name}-%{version}.tar.bz2
 Patch0:         openh323-1.19.0.1-mak_files.patch
-Patch1:         openh323-1.15.0-libname.diff
+Patch1:  	openh323-1.18.0-libname.patch
 Patch2:         openh323-1.15.1-pic.diff
 Patch3:         openh323-1.15.1-pwlib.diff
 # (fc) 1.18.0-3mdv fix build
