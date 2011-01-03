@@ -21,11 +21,7 @@ Patch5:		openh323-1.18.0-link.patch
 BuildRequires:  autoconf
 BuildRequires:  gawk
 BuildRequires:  openssl-devel
-BuildRequires:  openldap-devel
 BuildRequires:  pwlib-devel >= 1.8.4
-BuildRequires:  libspeex-devel
-#BuildRequires: vpb-devel
-BuildRequires:  X11-devel
 # (oe) these conflicts for now. i was planning to build against them,
 # but i save it for a rainy day, or someone else could fix it ;)
 BuildConflicts: gsm-devel
