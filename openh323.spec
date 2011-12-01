@@ -116,7 +116,7 @@ export CXXFLAGS="$OPT_FLAGS -I../include"
 %{__perl} -pi -e 's/\@SHAREDLIBEXT\@/.so/g' Makefile
 
 #parallel build is broken
-%{__make} OPTCCFLAGS="$OPT_FLAGS" optshared PREFIX=%{_prefix} OH323_INCDIR=$RPM_BUILD_DIR/%{name}-%{version}/include
+%{__make} OPTCCFLAGS="$OPT_FLAGS" optshared PREFIX=%{_prefix} OH323_INCDIR=%{_builddir}/%{name}-%{version}/include
 #%%make optshared 
 
 %install
