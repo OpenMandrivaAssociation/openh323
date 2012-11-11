@@ -1,0 +1,35 @@
+--- plugins/audio/LPC_10/Makefile.in.link	2010-04-07 05:48:11.000000000 +0200
++++ plugins/audio/LPC_10/Makefile.in	2010-04-07 05:48:50.000000000 +0200
+@@ -49,6 +49,7 @@
+ 
+ SRCDIR	= ./src
+ OBJDIR	= ./obj
++EXTRALIBS = -lm
+ 
+ HEADER_FILES	+= $(LPC10_INCDIR)/lpc10.h
+ 
+--- plugins/audio/iLBC/Makefile.in.link	2010-04-07 05:49:26.000000000 +0200
++++ plugins/audio/iLBC/Makefile.in	2010-04-07 05:49:50.000000000 +0200
+@@ -83,7 +83,7 @@
+ OBJECTS	= $(addprefix $(OBJDIR)/,$(patsubst %.c,%.o,$(notdir $(SRCS))))
+ 
+ $(PLUGIN): $(OBJECTS)
+-	$(CC) $(LDSO)$(SONAME) -o $@ $^
++	$(CC) $(LDSO)$(SONAME) -o $@ $^ -lm
+ 
+ install:
+ 	mkdir -p $(DESTDIR)$(LIBDIR)/pwlib/codecs/audio/
+--- plugins/audio/Speex/Makefile.in.link	2004-09-09 02:25:34.000000000 +0200
++++ plugins/audio/Speex/Makefile.in	2010-04-07 06:06:16.000000000 +0200
+@@ -77,9 +77,9 @@
+ 	  $(SRCDIR)/exc_5_64_table.c $(SRCDIR)/exc_8_128_table.c $(SRCDIR)/exc_20_32_table.c \
+ 	  $(SRCDIR)/exc_10_32_table.c $(SRCDIR)/exc_10_16_table.c $(SRCDIR)/hexc_10_32_table.c $(SRCDIR)/misc.c \
+ 	  $(SRCDIR)/speex_header.c $(SRCDIR)/speex_callbacks.c
+-EXTRALIBS =
++EXTRALIBS = -lm
+ else
+-EXTRALIBS = -lspeex
++EXTRALIBS = -lspeex -lm
+ endif
+ 
+ OBJDIR	= ./obj

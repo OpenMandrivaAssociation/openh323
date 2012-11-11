@@ -1,0 +1,10 @@
+--- openh323-1.18.0/include/ixjlid.h.fixbuild	2007-09-05 11:01:43.000000000 +0200
++++ openh323-1.18.0/include/ixjlid.h	2007-09-05 11:01:52.000000000 +0200
+@@ -274,7 +274,6 @@
+ 
+ #ifdef P_LINUX
+ #include <linux/telephony.h>
+-#include <linux/compiler.h>
+ #include <linux/ixjuser.h>
+ #endif
+ 

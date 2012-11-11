@@ -1,0 +1,11 @@
+--- src/Makefile	2004-06-10 15:16:31.000000000 +0200
++++ src/Makefile.oden	2004-11-10 01:16:38.293535395 +0100
+@@ -115,6 +115,8 @@
+ # Removed internal ldap as now use OpenLDAP
+ #
+ 
++STDCCFLAGS+=-fPIC
++
+ ifndef OPENH323DIR
+ OPENH323DIR=$(CURDIR)/..
+ endif

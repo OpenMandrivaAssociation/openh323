@@ -1,0 +1,22 @@
+--- openh323/Makefile.in.mak_files	2006-12-21 20:58:02.000000000 +0100
++++ openh323/Makefile.in	2006-12-22 06:24:48.000000000 +0100
+@@ -287,7 +287,7 @@
+ # export NOAUDIOCODECS=true
+ # export NOVIDEO=true
+ 
+-SUBDIRS := samples/simple
++SUBDIRS := src
+ 
+ ifneq (,$(wildcard dump323))
+ SUBDIRS += dump323
+--- openh323/src/Makefile.mak_files	2006-12-21 20:58:35.000000000 +0100
++++ openh323/src/Makefile	2006-12-22 06:28:41.000000000 +0100
+@@ -432,7 +432,7 @@
+ # If we're cross compiling, we want the host's asnparser
+ # otherwise use the one for the current platform
+ ASNPARSE_DIR = $(HOSTPWLIBDIR)/tools/asnparser
+-ASNPARSER = $(ASNPARSE_DIR)/obj_$(HOST_PLATFORM_TYPE)_d/asnparser
++ASNPARSER = $(PREFIX)/bin/asnparser
+ 
+ 
+ # If not cross compiling then make sure asnparser is built
