@@ -9,7 +9,7 @@ Epoch:          1
 Summary:        OpenH323 Library
 License:        MPL
 Group:          System/Libraries
-URL:            http://www.openh323.org/
+URL:            https://www.openh323.org/
 Source0:        %{name}-%{version}.tar.bz2
 Patch0:         openh323-1.19.0.1-mak_files.patch
 Patch1:  	openh323-1.18.0-libname.patch
